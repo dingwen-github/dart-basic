@@ -27,6 +27,7 @@ void main() {
   //运行时确定的
   final b = 20;
 //  b = 30;
+
 //  b = 'Hello Dart';
 
   //编译时就已经确定的
