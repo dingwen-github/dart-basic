@@ -14,6 +14,7 @@ void main() {
   rect.width = 200;
   rect.height = 300;
   print(rect.area);
+
   rect.area = 200;
   print(rect.area);
 }

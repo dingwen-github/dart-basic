@@ -23,7 +23,8 @@ void main() {
   num f = 1.6;
 
   //不是一个数字
-  print(0.0 / 0.0);
+  print(2 / 0.0);//Infinity 无穷
+  print(0/0);//NaN
 
 //  print( a + b);
   print(a + c);

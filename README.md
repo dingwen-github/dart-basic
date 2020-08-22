@@ -32,6 +32,25 @@ Dart语言基础，创建于20200726
 + 7.endsWith 是否以什么结束
 + 8.startWith 是否以什么结束
 + 9.split 以什么分隔，得到的是一个数组
++ 10.字符串连接 + 两个向量连接 'a' 'b' 空格两个字符串连接，必须是字符串不能是变量
++ 11.字符串转数字 int.parse() double.parse()
++ 12.数字转字符串 .toString() 保留进度 toStringAsFixed(位数)
++ 13.substring(start,end) 字符串截取前包后不包，只有一个参数的时候表示从当前index开始截取到最后
++ 14.splitMapJoin()查询“，”,用onMatch的返回值替换“，”用onNonMatch的返回值替换其他
++ 15.contains('a',[index]);当有两个参数时从index位置开始判断
++ 16.replaceAll(',','')
++ 17.replaceFirst('','',[index])当没有index表示，只替换第一个，有时表示从index开始第一个
++ 18.replaceRange(start,end,'')范围替换，前包后不包
++ 19.replaceAllMapped('',function,[index])从index开始 用方法返回值替换指定的字符串
++ 20.indexOf('',[index])
++ 21.lastIndexOf('',[index])
++ 22.toLowerCase()
++ 23.toUpperCase()
++ 24.trim() trimRight() trimLeft() 去除空格
++ 25.pad(index,[内容]) padRight(index,[内容]) padLeft(index,[内容])  补齐长度，默认以''
++ 26.compareTo() ascii码比较
+       
+       
 
 > `bool`
 >(true false)
@@ -40,9 +59,60 @@ Dart语言基础，创建于20200726
 + 1.在dart中数组和List是一样的概念
 + 2.indexOf() 查找元素所在位置，找到返回元素所在下标，没有找到则返回-1
 + 3.sort() 排序参数支持排序规则的方法 默认按照ascii码表排序
-+ 4.add() 添加一个元素5. insert(index,value) 插入指定位置的元素
++ 4.add() 添加一个元素（从末尾添加）
++ 5.insert(index,value) 插入指定位置的元素
 + 6.forEach() 参数为一个方法 List 遍历
 + 7.不可变List List list = const [])
++ 8..sublist(start,end)//一个参数的时候表示，截取List中下标为start的值，两个参数的时候表示截取从start到end之间的值（前包后不包）（第二个为可选参数）
++ 9.list1.addAll(list2) //两个list合并，得到的list1是两个list合并的结果
++ 10.insertAll(index,list)  //在指定index处插入list其余顺延
++ 11.followedBy(list)将自身和参数内list合并成一个List，返回Iterable
++ 12.remove(obj)删除具体的元素
++ 13.removeAt(index)删除指定index位置元素
++ 14.removeLast()删除末尾元素
++ 15.removeRange(start,end)范围删除
++ 16.removeWhere()根据条件删除
++ 17.clear()清空数组
++ 18.修改指定index位置的值
++ 19.setRange(startIndex,endIndex,list)范围内修改List的值，含头不含尾
++ 20.replaceRange(start,end,list)范围内替换，含头不含尾
++ 21.fillRange(start,end,value)从start-end每个元素用value替换，含头不含尾
++ 22.retainWhere(()=>(bool));根据条件筛选元素
++ 23.setAll(index,list)从index开始，使用list内的元素逐个替换本list中的元素
++ 24.indexOf(element,[start]);从index处开始查找指定元素，返回指定元素的索引,从前往后
++ 25.lastIndexOf(obj,[start]);从index处开始查找指定元素，返回指定元素的索引，从后往前
++ 26.elementAt(index)获取指定索引位置的元素
++ 27.any((element) =>(bool))判断List中是否有任意一个元素符合给定的参数
++ 28.every((element)=>(bool))判断List中是否每个元素都符合参数的函数
++ 29.contains(obj)List中是否存在给定的obj
++ 30.firstWhere((element) => (bool))返回第一个满足条件的元素
++ 31.indexWhere((e)=>(bool))返回第一个满足元素的index
++ 32.lastIndexWhere((e)=>(bool))从后面往前找，返回第一个满足条件的元素的index
++ 33.lastWhere((e)=>(bool))从后面往前找，返回第一个满足条件的元素的值
++ 34.forEach() 遍历每一个元素
++ 35.map()遍历现有List的每一个元素，并做处理，返回一个新的Iterable
++ 36.fold(initValue,(preValue,element)=>())根据现有的List和给定的initValue指定一个参数函数规则，对List每个元素做操作，并将结果返回
++ 37.reduce((a,b)=>())用指定的方法对元素做连续操作，将结果返回
++ 38.skip(count)越过count个元素后，开始返回list的Iterable+
++ 39.skipWhile((e)=>(bool))根据参数函数。找到第一个不符合条件的元素，然后将其及其后的元素返回
++ 40.take(count)从0开始取count个元素，并返回结果
++ 41.takeWhile((e)=>(bool))从0开始取，直至第一个不符合函数的元素，将其前面的元素都返回
++ 42.where((e)=>(bool))根据指定参数函数筛选每个元素，符合条件的元素组成一个新的Iterable
++ 43.singleWhere((e)=>(bool))找到唯一满足条件的元素
++ 44.whereType()从无指定泛型的List中，筛选出指定类型的数据
++ 45.cast()将List的泛型提升到其父类
++ 46.expand()根据现有的List,指定一个规则，生成一个新的List
++ 47.toSet()将List转为Set去除后面重复的元素
++ 48.asMap() 将list转为Map
++ 49.shuffle() List内元素，重新随机排列
++ 50.sort()List自身排序
++ 51.sublist(start,[index])从指定index截取list,含头不含尾
++ 52.length
++ 53.isEmpty
++ 54.isNotEmpty
++ 55.reversed
++ 56.first
++ 57.last
 
 > `Map`
 + 1.Map的key value 可以是任意类型
@@ -53,7 +123,13 @@ Dart语言基础，创建于20200726
 + 6.values 得到所有的value  _CompactIterable<dynamic>
 + 7.containsKey('')  containsValue('')
 + 8.remove() //参数为key
-+ 9.List 转 Map 默认会以下标为key list的内容为value 下标从零开始10. forEach() \\参数为一个方法 使用见代码)
++ 9.List 转 Map 默认会以下标为key list的内容为value 下标从零开始
++ 10.forEach() //参数为一个方法 使用见代码)
++ 11.cast()泛型提升为父祖类
++ 12.putIfAbsent()存在key就获取值，不存在则添加到map然后返回值
++ 13.addEntries()合并两个map如果key有重复，被合并的map的value覆盖前者
++ 14.addAll()整体合并另一个map，泛型要一致
++ 15.removeWhere()根据条件批量删除
 
 > `dynamic`
 > 动态数据类型

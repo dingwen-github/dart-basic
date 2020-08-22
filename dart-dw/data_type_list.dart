@@ -7,10 +7,13 @@
   1.在dart中数组和List是一样的概念
   2.indexOf() 查找元素所在位置，找到返回元素所在下标，没有找到则返回-1
   3.sort() 排序参数支持排序规则的方法 默认按照ascii码表排序
-  4.add() 添加一个元素
+  4.add() 添加一个元素(从末尾添加)
   5. insert(index,value) 插入指定位置的元素
   6.forEach() 参数为一个方法 List 遍历
   7.不可变List List list = const [] ;
+  + 8..sublist(start,end)//一个参数的时候表示，截取List中下标为start的值，两个参数的时候表示截取从start到end之间的值（前包后不包）（第二个为可选参数）
+  + 9.list1.addAll(list2) //两个list合并，得到的list1是两个list合并的结果
+  + 10.insertAll(index,list)  //在指定index处插入list其余顺延
  */
 void main() {
   var list1 = [1, 10, 5, 'dart', true];
@@ -41,7 +44,10 @@ void main() {
   list4.sort();
   print(list4);
 
-  print(list4.sublist(2));
+  //在List中截取下标为（第一个参数）的值进行打印
+  //两个参数的时候表示从List中截取下标从第一个参数到第二个参数之间的值进行打印（前包后不包）
+  print(list4.sublist(1,3));
+
 
   //forEach参数是一个方法
   list4.forEach(print);
