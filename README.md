@@ -307,3 +307,50 @@ Dart语言基础，创建于20200726
   + 2.每个类都隐式的定义了一个包含所有实例成员的接口
   + 3.如果是复用已有类的实现，使用继承（extends）
   + 4.如果只是使用已有类的外在行为，使用接口（implements）
+  
+> `Mixins` 多继承
+   + 1.Mixins类似于多继承，是在多类继承中重用一个类代码的方式
+   + 2.作为Mixin的类不能有显式的构造方法
+   + 3.作为Mixin的类只能继承紫Object
+   + 4.使用关键字with连接一个或多个mixin
+
+> `operator`操作符复写
+
+> `enum`枚举
+   + 1.枚举是一种有穷序列集的数据类型
+   + 2.使用关键字enum定义一个枚举
+   + 3.常用于代替常量，控制语句等
+   + 4.index从0开始
+   + 5.不能指定原始值
+   + 6.不能写方法
+   
+> `DateTime` 
+  + 1.DateTime.now()
+  + 2.DateTime([int month = 1,int day = 1,int hour = 0,int minute = 0,int second = 0,int millisecond = 0,int microsecond = 0]);
+  + 3.DateTime.utc(int year,[int month = 1, int day = 1,int hour = 0,int minute = 0,int second = 0,int millisecond = 0,int microsecond = 0]);
+  + 4.解析时间 ISO 8601 DateTime.parse('')
+  + 5.时间增减量add(new Duration(minutes: 5))    add(new Duration(minutes: -5))
+  + 6.时间比较 isAfter中(param)是否在param之后
+  + 7.时间比较 isBefore(param)是否在param之前
+  + 8.时间差 difference  print([difference.inDays, difference.inHours]);//d1与d2相差的天数与小时
+  + 9.时间戳  print(now.millisecondsSinceEpoch);//单位毫秒，13位时间戳 print(now.microsecondsSinceEpoch);//单位微秒,16位时间戳
+  + 10.padLeft(int width,String padding)：如果字符串长度小于width，在左边填充padding
+  
+  
+> 异步编程
+  + 1.在Dart中与Promise对应的是Future
+  + 2.Dart是单线程的，没有线程抢占，数据安全
+  + 3.Future对象封装了Dart的异步操作，两种状态（uncompleted）(completed)
+  + 4.在Dart中，所有涉及到IO的函数都封装成一个Future对象返回，在你调用一个异步函数的时候，在结果或者错误返回之前，你得到的是一个uncompleted状态的Future
+  + 5.completed也有两种状态，一种代表成功返回结果，一种代表失败返回错误
+  + 6.FutureOr<T> 是个特殊的类型，它没有类成员，不能实例化，也不可以继承，看来它很可能只是一个语法糖 受限制的dynamic类型，因为它只能接受Future<T>或者T类型的值 请避免声明函数返回类型为FutureOr<T>
+  + 7.如果Future内的函数执行发生异常，可以通过Future.catchError来处理异常
+  + 8.Future支持链式调用
+  + 9.申明了async的函数，返回值必须是Future对象。即便你在async函数里面直接返回T类型的数据，编译器会自动帮你包装成Future<T>类型的对象。如果是void函数则返回Future<void>
+  + 10.在遇到await的时候，又会把Future类型拆包，原来的数据类型暴露出来
+  + 11.await所在的函数必须添加async关键字
+  + 12.事件循环 （Event Loop）  isolate 
+  + 13.事件队列：用来处理外部的事件，如果IO、点击、绘制、计时器（timer）和不同 isolate 之间的消息事件等。
+  + 14.微任务队列：处理来自于Dart内部的任务，适合用来不会特别耗时或紧急的任务，微任务队列的处理优先级比事件队列的高，如果微任务处理比较耗时，会导致事件堆积，应用响应缓慢。
+  + 15.你可以通过Future.microtask 来向isolate提交一个微任务
+  + 16.多线程 在Dart中，你可以通过Isolate.spawn 来创建一个新的isolate
