@@ -7,13 +7,14 @@
 /*
   + 1.Object是所有类的父类
  */
-class PersonTwo extends Object{
+class PersonTwo extends Object {
   String name;
   int age;
   String _birthday;
+
   bool get isAdult => age > 18;
 
-  void run(){
+  void run() {
     print('student run ...');
   }
 

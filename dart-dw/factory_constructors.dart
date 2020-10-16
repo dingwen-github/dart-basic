@@ -12,14 +12,16 @@
   + 5.final属性的赋值需要在构造方法执行之前进行
  */
 
-class Logger{
+class Logger {
   final String name;
+
   //map初始化
-  static final Map<String,Logger> _cache = <String,Logger>{};
+  static final Map<String, Logger> _cache = <String, Logger>{};
+
   factory Logger(String name){
-    if(_cache.containsKey(name)){
+    if (_cache.containsKey(name)) {
       return _cache[name];
-    }else{
+    } else {
       final logger = Logger._internal(name);
       _cache[name] = logger;
       return logger;
@@ -29,6 +31,6 @@ class Logger{
   Logger._internal(this.name);
 }
 
-void log(String msg){
+void log(String msg) {
   print(msg);
 }

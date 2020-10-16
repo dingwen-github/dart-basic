@@ -133,7 +133,7 @@ void main() {
 //    print(result2);//2   获取新的key的value
 //    print(map20);//{a: 1, b: 2, c: 3, d: 2}   map改变
 
-///cast()泛型提升为父祖类
+  ///cast()泛型提升为父祖类
 
   Map<String, int> map21 = {"a": 1, "b": 2, "c": 3};
   Map<Object, Object> map22 = map21.cast();

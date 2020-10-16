@@ -29,7 +29,9 @@ Function functionOne() {
 }
 
 //返回匿名方法
-Function functionThree(){
+Function functionThree() {
   int count = 0;
-  return (){count++;};
+  return () {
+    count++;
+  };
 }

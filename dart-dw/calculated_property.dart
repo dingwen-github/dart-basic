@@ -31,7 +31,8 @@ class Rectangle {
 //  }
 
   num get area => width * height;
-      set area(value){
-        width = value / 20;
-      }
+
+  set area(value) {
+    width = value / 20;
+  }
 }

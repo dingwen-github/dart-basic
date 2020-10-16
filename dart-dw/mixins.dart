@@ -14,24 +14,24 @@ void main() {
   d.c();
 }
 
-class A{
-  void a(){
+class A {
+  void a() {
     print('A.a()..');
   }
 }
 
-class B{
-  void b(){
+class B {
+  void b() {
     print('B.b()..');
   }
 }
 
 
-class C{
+class C {
 //  C(){
 //
 //  }
-  void c(){
+  void c() {
     print('C.c()..');
   }
 }
@@ -40,6 +40,5 @@ class C{
   先试用继承才能使用with
   如果A B C里面都有相同的方法会调用最后一个
  */
-class D extends A with B,C{
-
+class D extends A with B, C {
 }

@@ -16,18 +16,20 @@ void main() {
     ..work();
 
   var p1 = new Person();
-  p1('dingwen',23);
+  p1('dingwen', 23);
 }
 
 class Person {
   String name;
   int age;
-  Person({this.age,this.name});
+
+  Person({this.age, this.name});
+
   void work() {
     print('name is $name,age is $age');
   }
 
-  void call(name,age){
+  void call(name, age) {
     print('name is $name,age is $age');
   }
 }

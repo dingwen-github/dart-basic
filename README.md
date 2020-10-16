@@ -49,6 +49,7 @@ Dart语言基础，创建于20200726
 + 24.trim() trimRight() trimLeft() 去除空格
 + 25.pad(index,[内容]) padRight(index,[内容]) padLeft(index,[内容])  补齐长度，默认以''
 + 26.compareTo() ascii码比较
++ 27.endsWith() 字符序列是此对象表示的字符序列的后缀，则返回 true；否则返回 false
        
        
 

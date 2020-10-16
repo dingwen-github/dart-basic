@@ -11,12 +11,12 @@
   + 4.使用_表示私有性，包括类、属性等。
   + 5.是哟用import导入库
  */
-class Person{
+class Person {
   String name;
   int age;
   final String _address = 'xs';
 
-  void work(){
+  void work() {
     print('name is $name,age is $age');
   }
 }

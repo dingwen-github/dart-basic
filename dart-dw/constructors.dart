@@ -16,18 +16,19 @@
   + 9.常量构造方法：使用const申明构造方法，并且所有变量都为final.使用const声明对象，可以省略
  */
 
-void main(){
+void main() {
 //  Person p = new Person();
 //  p.work();
 
-const  stu = const Student('1605410122', 99.0, 'dingwen');
+  const stu = const Student('1605410122', 99.0, 'dingwen');
 //stu = Student('1605410122', 99.0, 'dingwen');
 }
 
-class Person{
+class Person {
   String name;
   int age;
   final String address;
+
   //默认构造方法
 //  Person(){
 //
@@ -39,25 +40,26 @@ class Person{
 ////    this.address = address;
 //  }
 
-  Person(this.name,this.age,this.address);
+  Person(this.name, this.age, this.address);
 
   //命名构造方法
   Person.withName(String name, this.address){
 
   }
 
-  Person.age(this.age,this.address);
+  Person.age(this.age, this.address);
 
-  void work(){
+  void work() {
     print('working ....');
   }
 }
 
 //常量构造方法
-class Student{
+class Student {
   final String id;
   final double score;
   final String name;
-  const Student(this.id,this.score,this.name);
+
+  const Student(this.id, this.score, this.name);
 }
 

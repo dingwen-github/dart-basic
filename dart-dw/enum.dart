@@ -12,8 +12,8 @@ const winter = 3;
 
 void main() {
 //  var currentSeason = 1;
-var currentSeason = Season.spring;
-print(currentSeason.index);
+  var currentSeason = Season.spring;
+  print(currentSeason.index);
   switch (currentSeason) {
     case Season.spring:
       print('1-3月');
@@ -30,7 +30,7 @@ print(currentSeason.index);
   }
 }
 
-enum Season{
+enum Season {
   spring,
   summer,
   autumn,

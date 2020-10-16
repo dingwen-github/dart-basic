@@ -10,10 +10,10 @@
   + 4.continue跳转
   + 5.可以加标签跳转，用法看代码
  */
-void main(){
+void main() {
   String str = 'Dart';
-  switch(str){
-    //标签随便写
+  switch (str) {
+  //标签随便写
     C : case 'Dart':
       print('Dart');
       //跳转标签

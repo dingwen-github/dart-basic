@@ -2,7 +2,9 @@
   <dictionary name="Administrator">
     <words>
       <w>dingwen</w>
+      <w>growable</w>
       <w>maorui</w>
+      <w>mixins</w>
     </words>
   </dictionary>
 </component>

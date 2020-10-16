@@ -229,59 +229,67 @@ void main() {
 
   List<int> list44 = [1, 2, 3, 4, 5, 6];
   //2为初始值。后面的方法定义初始值和List之间的操作方式，并将结果返回
-  int result10 = list44.fold(2, (a, element) => (a * element));//2*(1*2*3*4*5*6)
-  int result11 = list44.fold(2, (a,element)=>(a+element));//2+(1+2+3+4+5) = 17
+  int result10 = list44.fold(
+      2, (a, element) => (a * element)); //2*(1*2*3*4*5*6)
+  int result11 = list44.fold(
+      2, (a, element) => (a + element)); //2+(1+2+3+4+5) = 17
 
   ///reduce((a,b)=>())用指定的方法对元素做连续操作，将结果返回
-  List<int> list52 = [3,4,1,2,5];
-  int result52 = list52.reduce((a,b) => (a+b));//3+4+1+2+5
+  List<int> list52 = [3, 4, 1, 2, 5];
+  int result52 = list52.reduce((a, b) => (a + b)); //3+4+1+2+5
 
   ///skip(count)越过count个元素后，开始返回list的Iterable
   ///skipWhile((e)=>(bool))根据参数函数。找到第一个不符合条件的元素，然后将其及其后的元素返回
 
   List<int> list54 = [3, 4, 1, 2, 5];
-  Iterable<int> result30 = list54.skip(2);//越过count个元素后，开始返回list的Iterable
+  Iterable<int> result30 = list54.skip(2); //越过count个元素后，开始返回list的Iterable
 //    print(result30);//(1, 2, 5)
   Iterable<int> result31 = list54.skip(3);
 //    print(result31);//(2, 5)
-  Iterable<int> result32 = list54.skipWhile((e)=>(e>2));//从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其及其后面的元素返回
+  Iterable<int> result32 = list54.skipWhile((e) =>
+  (e > 2)); //从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其及其后面的元素返回
 //    print(result32.toList());//[1, 2, 5]
-  Iterable<int> result35 = list54.skipWhile((e)=>(e<4));//从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其及其后面的元素返回
+  Iterable<int> result35 = list54.skipWhile((e) =>
+  (e < 4)); //从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其及其后面的元素返回
 //    print(result35.toList());//[4, 1, 2, 5]
-  Iterable<int> result36 = list54.skipWhile((e)=>(e>0));//从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其及其后面的元素返回，如果都符合，返回一个空数组
+  Iterable<int> result36 = list54.skipWhile((e) =>
+  (e > 0)); //从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其及其后面的元素返回，如果都符合，返回一个空数组
 //    print(result36.toList());//[]
-  Iterable<int> result37 = list54.skipWhile((e)=>(e<0));//从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其及其后面的元素返回，如果都不符合，全部返回。都不符合其实就是第一个就不符合，因此将第一个及后面的返回。
+  Iterable<int> result37 = list54.skipWhile((e) =>
+  (e <
+      0)); //从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其及其后面的元素返回，如果都不符合，全部返回。都不符合其实就是第一个就不符合，因此将第一个及后面的返回。
 //    print(result37.toList());//[3, 4, 1, 2, 5]
 
   ///take(count)从0开始取count个元素，并返回结果
   ///takeWhile((e)=>(bool))从0开始取，直至第一个不符合函数的元素，将其前面的元素都返回
   List<int> list55 = [3, 4, 1, 2, 5];
-  Iterable<int> result33 = list55.take(2);//从0开始取2个元素  并返回
+  Iterable<int> result33 = list55.take(2); //从0开始取2个元素  并返回
 //    print(result33);//(3, 4, 1)
-  Iterable<int> result34 = list55.takeWhile((e)=>(e>2));//从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其前面元素都返回
+  Iterable<int> result34 = list55.takeWhile((e) =>
+  (e > 2)); //从第一个元素开始，逐个判断是否符合参数函数，直至第一个不符合的元素，将其前面元素都返回
 //    print(result34);//(3, 4)
 
-///where((e)=>(bool))根据指定参数函数筛选每个元素，符合条件的元素组成一个新的Iterable
+  ///where((e)=>(bool))根据指定参数函数筛选每个元素，符合条件的元素组成一个新的Iterable
 
-  List<int> list57 = [3, 4, 1, 2, 5,2,3,6];
-  Iterable<int> result39 = list57.where((e)=>(e>2));//根据参数函数筛选
+  List<int> list57 = [3, 4, 1, 2, 5, 2, 3, 6];
+  Iterable<int> result39 = list57.where((e) => (e > 2)); //根据参数函数筛选
   //print(result39);//(3, 4, 5, 3, 6)
 
   ///singleWhere((e)=>(bool))找到唯一满足条件的元素
   List<int> list53 = [3, 4, 1, 2, 5];
   //找到那唯一满足条件的元素，如果没有满足条件的元素或有多个元素满足条件，就返回orElse方法的返回值，如果没有传入orElse则报错。
-  int result29 = list53.singleWhere((e)=>(e>4),orElse: ()=>(10));
+  int result29 = list53.singleWhere((e) => (e > 4), orElse: () => (10));
 //    print(result29);//5
 
 
   ///whereType()从无指定泛型的List中，筛选出指定类型的数据
-  List list58 = [3, 4, "a",true,"b",5,false];
-  Iterable<int> result40 = list58.whereType();//从混合类型的List中，筛选出指定类型的数据
-  print(result40);//(3, 4, 5)
+  List list58 = [3, 4, "a", true, "b", 5, false];
+  Iterable<int> result40 = list58.whereType(); //从混合类型的List中，筛选出指定类型的数据
+  print(result40); //(3, 4, 5)
   Iterable<String> result41 = list58.whereType();
-  print(result41);//(a, b)
+  print(result41); //(a, b)
   Iterable<bool> result42 = list58.whereType();
-  print(result42);//(true, false)
+  print(result42); //(true, false)
 
   ///cast()将List的泛型提升到其父类
   List<String> list37 = List();
@@ -291,20 +299,25 @@ void main() {
   list37.add("ddd");
   list37.add("eee");
 //    print(list37);// [aaa, bbb, ccc, ddd, eee]
-  List<Object> list38 = list37.cast();//类型提升，将当前List<String> 提升为泛型的父祖类  List<Object>
-  list38.add('2222');//必须添加同类型的元素   如果list38.add(2)  则报错
+  List<Object> list38 = list37
+      .cast(); //类型提升，将当前List<String> 提升为泛型的父祖类  List<Object>
+  list38.add('2222'); //必须添加同类型的元素   如果list38.add(2)  则报错
 //    print(list38);//[aaa, bbb, ccc, ddd, eee, 222]
 
-///expand()根据现有的List,指定一个规则，生成一个新的List
+  ///expand()根据现有的List,指定一个规则，生成一个新的List
 
   List<int> list42 = [1, 2, 3, 4, 5];
-  Iterable<int> result6 = list42.expand((element)=>([element+1,element+2]));//通过对元素操作，返回一组指定规则的新的集合
+  Iterable<int> result6 = list42.expand((element) =>
+  ([
+    element + 1,
+    element + 2
+  ])); //通过对元素操作，返回一组指定规则的新的集合
 //    print(result6);//(2, 3, 3, 4, 4, 5, 5, 6, 6, 7)
 //    print(result6.toList());//[2, 3, 3, 4, 4, 5, 5, 6, 6, 7]
 
   ///toSet()将List转为Set去除后面重复的元素
-  List<int> list56 = [3, 4, 1, 2, 5,2,3,6];
-  Set<int> result38 = list56.toSet();//将list转为set,将后面重复的都去掉
+  List<int> list56 = [3, 4, 1, 2, 5, 2, 3, 6];
+  Set<int> result38 = list56.toSet(); //将list转为set,将后面重复的都去掉
   //print(result38);//{3, 4, 1, 2, 5, 6}
 
   ///asMap() 将list转为Map
@@ -315,7 +328,7 @@ void main() {
   list33.add("ddd");
   list33.add("eee");
 //    print(list33);// [aaa, bbb, ccc, ddd, eee]
-  Map<int,String> map = list33.asMap();//list转为map  key为index  value为list的值
+  Map<int, String> map = list33.asMap(); //list转为map  key为index  value为list的值
 //    print(map);//{0: aaa, 1: bbb, 2: ccc, 3: ddd, 4: eee}
 
 
@@ -328,7 +341,7 @@ void main() {
   list35.add("ddd");
   list35.add("eee");
 //    print(list35);// [aaa, bbb, ccc, ddd, eee]
-  list35.shuffle();//元素重新随机排列
+  list35.shuffle(); //元素重新随机排列
 //    print(list35);//[ddd, eee, aaa, ccc, bbb]
 
 
@@ -340,8 +353,8 @@ void main() {
   list30.add(0);
 //    print(list30);//[2, 3, 1, 0]
   //升序
-  list30.sort((a,b)=>(a>b ? 1 : -1));//自身排序  修改本身的list
-    print(list30);//[0, 1, 2, 3]
+  list30.sort((a, b) => (a > b ? 1 : -1)); //自身排序  修改本身的list
+  print(list30); //[0, 1, 2, 3]
 
   ///sublist(start,[index])从指定index截取list,含头不含尾
 
@@ -350,11 +363,11 @@ void main() {
   list21.add(1);
   list21.add(2);
   list21.add(3);
-  print(list21);//[0, 1, 2, 3]
-  list21.insert(1, 5);  //指定索引位置 插入值，其余顺延
-  print(list21);// [0, 5, 1, 2, 3]
-  List<int> list22 = list21.sublist(1);//从指定索引截取List
-  List<int> list23 = list21.sublist(1,3);//从指定索引截取List  含头不含尾
-  print(list22);//[5, 1, 2, 3]
-  print(list23);//[5, 1]
+  print(list21); //[0, 1, 2, 3]
+  list21.insert(1, 5); //指定索引位置 插入值，其余顺延
+  print(list21); // [0, 5, 1, 2, 3]
+  List<int> list22 = list21.sublist(1); //从指定索引截取List
+  List<int> list23 = list21.sublist(1, 3); //从指定索引截取List  含头不含尾
+  print(list22); //[5, 1, 2, 3]
+  print(list23); //[5, 1]
 }

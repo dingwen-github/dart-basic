@@ -23,7 +23,7 @@ Future<String> fetchData() {
 
 Future<void> fetchUserOder() {
   return Future.delayed(Duration(seconds: 2),
-      () => throw Exception('Logout failed: user id is not null'));
+          () => throw Exception('Logout failed: user id is not null'));
 }
 
 //链式调用
@@ -52,7 +52,6 @@ void main() {
 
   login('dingwen', '123')
       .then((token) => fetchUserInfo(token).then((user) => saveUserInfo(user)));
-
 }
 
 //换成 async 和await 则可以这样

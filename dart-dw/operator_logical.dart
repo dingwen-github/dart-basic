@@ -9,6 +9,6 @@
   + &&
   + ||
  */
-void main(){
+void main() {
 
 }

@@ -8,17 +8,17 @@ import 'Person.dart';
   + 3.抽象类可以没有抽象方法
   + 4.有抽象方法的类一定要申明成抽象类
  */
-void main(){
+void main() {
 //  var person = new Person();
 }
 
-abstract class Person{
+abstract class Person {
 
 //  void work(){}
   void work();
 }
 
-class Student extends Person{
+class Student extends Person {
   @override
   void work() {
     print('work ....');

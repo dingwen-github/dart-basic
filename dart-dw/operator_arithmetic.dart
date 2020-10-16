@@ -14,6 +14,6 @@
   + ++
   + --
  */
-void main(){
+void main() {
 
 }

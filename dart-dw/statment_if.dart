@@ -7,11 +7,11 @@
 /*
   + 和其他语言一致
  */
-void main(){
+void main() {
   int score = 100;
-  if(score == 90){
+  if (score == 90) {
     print('优秀');
-  }else {
+  } else {
     print('你猜');
   }
 }

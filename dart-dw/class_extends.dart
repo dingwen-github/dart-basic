@@ -16,7 +16,7 @@ import 'PersonTwo.dart';
 void main() {
   Teacher()
     ..talk()
-    //父类的属性
+  //父类的属性
     ..name = 'dingwen'
     ..age = 23;
   //父类私有属性

@@ -51,7 +51,7 @@ void main() {
 
   //List 转Map
   List list = ['1', '2', '3'];
- Map  listMap = list.asMap();
+  Map listMap = list.asMap();
   print(listMap);
 }
 

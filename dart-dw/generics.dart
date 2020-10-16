@@ -1,6 +1,6 @@
 ///泛型
 
-void main(){
+void main() {
   var list = new List<int>();
 //  list.add('');//默认dynamic类型
   var utils = new Utils();
@@ -10,13 +10,13 @@ void main(){
 }
 
 //类泛型
-class Utils<T>{
-  void test(T text){
+class Utils<T> {
+  void test(T text) {
     print(text);
   }
 
   //方法泛型
-  void test2<T>(T element){
+  void test2<T>(T element) {
     print(element);
   }
 }

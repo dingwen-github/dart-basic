@@ -57,18 +57,18 @@ void main() {
   print(a2.substring(0, 2)); //aa   含头不含尾
   print(a2.substring(3)); //bbb  从指定index至末尾
   String a5 = "a,d,d  d,c,,";
-  List<String> a6 = a5.split(",");//使用，分割，返回的是一个数组
+  List<String> a6 = a5.split(","); //使用，分割，返回的是一个数组
   print(a6.length); //6
   print(a6); //[a, d, d  d, c, , ]
 
   String a8 = "a b,c";
-  String a7 = a8.splitMapJoin(",",//查询“，”,用onMatch的返回值替换“，”用onNonMatch的返回值替换其他
+  String a7 = a8.splitMapJoin(",", //查询“，”,用onMatch的返回值替换“，”用onNonMatch的返回值替换其他
       onMatch: (Match match) {
         return "a";
       }, onNonMatch: (String nonMatch) {
         return "b";
       });
-  print(a7);//bab    a b,c  =>   bab
+  print(a7); //bab    a b,c  =>   bab
 
 
   //字符串判断
@@ -83,50 +83,52 @@ void main() {
 
   //字符串替换
   String a4 = "abcdeab";
-  print(a4.replaceAll("ab","cc"));//cccdecc  替换全部符合条件的
-  print(a4.replaceFirst("ab", "dd"));//ddcdeab  只替换第一个符合条件的
-  print(a4.replaceFirst("ab", "dd",3));//abcdedd  从index=3开始  替换第一个符合条件的
-  print(a4.replaceRange(1, 3, "z"));// 范围替换 从0-3  含0不含3
-  print(a4.replaceAllMapped("c", (Match match){//abyydeab  用方法返回值替换指定的字符串
+  print(a4.replaceAll("ab", "cc")); //cccdecc  替换全部符合条件的
+  print(a4.replaceFirst("ab", "dd")); //ddcdeab  只替换第一个符合条件的
+  print(a4.replaceFirst("ab", "dd", 3)); //abcdedd  从index=3开始  替换第一个符合条件的
+  print(a4.replaceRange(1, 3, "z")); // 范围替换 从0-3  含0不含3
+  print(a4.replaceAllMapped("c", (Match match) { //abyydeab  用方法返回值替换指定的字符串
     return "yy";
   }));
-  print(a4.replaceFirstMapped("b", (Match match){//abcdea333  从index=2开始 用方法返回值替换指定的字符串
+  print(a4.replaceFirstMapped(
+      "b", (Match match) { //abcdea333  从index=2开始 用方法返回值替换指定的字符串
     return "333";
-  },2));
+  }, 2));
 
 
   //字符串查找
   String a9 = "aababcc1bc23";
-  print(a9.indexOf("ab"));//1  第一个符合条件的index
-  print(a9.indexOf("ab",2));//3   从index=2开始往后找
-  print(a9.indexOf("ab",4));//-1   从index=4开始往后找，找不到返回-1
-  print(a9.lastIndexOf("bc"));//8  从后往前找   返回第一个符合条件的index
-  print(a9.lastIndexOf("bc",3));//-1  从后往前找  从index=3开始找  返回第一个符合条件的index  找不到返回-1
-  print(a9.lastIndexOf("bc",7));//4  从后往前找  从index=7开始找  返回第一个符合条件的index
+  print(a9.indexOf("ab")); //1  第一个符合条件的index
+  print(a9.indexOf("ab", 2)); //3   从index=2开始往后找
+  print(a9.indexOf("ab", 4)); //-1   从index=4开始往后找，找不到返回-1
+  print(a9.lastIndexOf("bc")); //8  从后往前找   返回第一个符合条件的index
+  print(a9.lastIndexOf(
+      "bc", 3)); //-1  从后往前找  从index=3开始找  返回第一个符合条件的index  找不到返回-1
+  print(a9.lastIndexOf("bc", 7)); //4  从后往前找  从index=7开始找  返回第一个符合条件的index
 
   //大小写转换
   String a10 = "aaBBCc";
-  print(a10.toLowerCase());//aabbcc
-  print(a10.toUpperCase());//AABBCC
+  print(a10.toLowerCase()); //aabbcc
+  print(a10.toUpperCase()); //AABBCC
 
   //去除空格
   String a11 = "  aab  bcc  ";
-  print(a11);//   aab  bcc
-  print(a11.trim());//aab  bcc    去除左右两边空格
-  print(a11.trimRight());//   aab  bcc   去除右边空格
-  print(a11.trimLeft());// aab  bcc   //去除左边空格
+  print(a11); //   aab  bcc
+  print(a11.trim()); //aab  bcc    去除左右两边空格
+  print(a11.trimRight()); //   aab  bcc   去除右边空格
+  print(a11.trimLeft()); // aab  bcc   //去除左边空格
 
   //补齐长度 剩余位使用指定字符串替换
   String a13 = "111";
-  print(a13.padLeft(6));//   111     剩余3个位  默认使用""补齐
-  print(a13.padRight(6,"c"));  //111ccc    剩余3个位   指定使用"c"
-  print(a13.padRight(6,"dd"));  //111dddddd  剩余3个位   每个位指定使用"dd"   替换后总长度不是6
-  print(a13.padLeft(2,"e"));//111    如果指定长度小于原字符串长度   返回原字符串
+  print(a13.padLeft(6)); //   111     剩余3个位  默认使用""补齐
+  print(a13.padRight(6, "c")); //111ccc    剩余3个位   指定使用"c"
+  print(a13.padRight(6, "dd")); //111dddddd  剩余3个位   每个位指定使用"dd"   替换后总长度不是6
+  print(a13.padLeft(2, "e")); //111    如果指定长度小于原字符串长度   返回原字符串
 
 
   //字符串先后比较
   String a12 = "bbcc";
-  print(a12.compareTo("aaa"));//1   在ascii码中 b>a
-  print(a12.compareTo("bbcc"));//0
-  print(a12.compareTo("dd"));//-1    在ascii码中 b<d
+  print(a12.compareTo("aaa")); //1   在ascii码中 b>a
+  print(a12.compareTo("bbcc")); //0
+  print(a12.compareTo("dd")); //-1    在ascii码中 b<d
 }

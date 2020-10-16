@@ -22,7 +22,9 @@ class Person {
   Person(this.name, this.age, this.address);
 
   //初始化列表：对final变量进初始化
-  Person.withMap(Map map) : address = map['address'],name = map['name'] {
+  Person.withMap(Map map)
+      : address = map['address'],
+        name = map['name'] {
     this.age = age;
   }
 

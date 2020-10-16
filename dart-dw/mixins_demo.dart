@@ -1,19 +1,19 @@
 ///Mixins实例
 
 
-abstract class Engine{
+abstract class Engine {
   void work();
 }
 
-class OilEngine implements Engine{
+class OilEngine implements Engine {
   @override
   void work() {
-   print('work with oil');
+    print('work with oil');
   }
 
 }
 
-class ElectricEngine implements Engine{
+class ElectricEngine implements Engine {
   @override
   void work() {
     print('work with electric');
@@ -21,16 +21,17 @@ class ElectricEngine implements Engine{
 
 }
 
-class Type{
+class Type {
   String name;
-  void run(){}
+
+  void run() {}
 }
 
 class Car = Type with ElectricEngine;
 
-class Bus extends Type with OilEngine{
+class Bus extends Type with OilEngine {
 }
 
-void main(){
+void main() {
   var bus = new Bus();
 }

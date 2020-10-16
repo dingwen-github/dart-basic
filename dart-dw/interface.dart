@@ -26,7 +26,7 @@ void main() {
 //}
 
 //建议使用抽象类的方式作为接口
-abstract class Person{
+abstract class Person {
   void run();
 }
 

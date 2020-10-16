@@ -18,51 +18,53 @@
   + 11.方法对象：方法可以作为对象赋值给其他变量，方法可以作为参数传递给其他方法
  */
 
-void main(List args){
+void main(List args) {
   print(args);
   String result = getPerson('dingwen', 23);
   print(result);
 
   printPerson('maorui', 12);
-  print(printPerson('maorui',19));
+  print(printPerson('maorui', 19));
 
   getStr(1);
   getString();
 
   print(getStudent1('1605410122'));
-  print(getStudent1('1605410122','dingwen'));
-  print(getStudent1('1605410122','dingwen',23,99.0));
+  print(getStudent1('1605410122', 'dingwen'));
+  print(getStudent1('1605410122', 'dingwen', 23, 99.0));
   print(getStudent2('1605410122'));
-  print(getStudent2('1605410122',name: 'dingwen'));
-  print(getStudent2('1605410122',name: 'dingwen',age: 23,score: 99.0));
-  print(getStudent3('1605410122',name: 'dingwen',age: 23,score: 99.0));
-  print(getStudent3('1605410122',name: 'dingwen',age: 23));
+  print(getStudent2('1605410122', name: 'dingwen'));
+  print(getStudent2('1605410122', name: 'dingwen', age: 23, score: 99.0));
+  print(getStudent3('1605410122', name: 'dingwen', age: 23, score: 99.0));
+  print(getStudent3('1605410122', name: 'dingwen', age: 23));
 }
-String getPerson(String name,int age){
+
+String getPerson(String name, int age) {
   return 'name: $name, age= $age';
 }
 
 //void 可以省略，参数类型也可以省略,返回值为null
- printPerson(String name,int age){
- print('name=$name,age=$age');
+printPerson(String name, int age) {
+  print('name=$name,age=$age');
 }
 
 //箭头语法
 getString() => print('object');
+
 getStr(gender) => gender == 1 ? '男生' : '女生';
 //getStr2() => return 'a';
 
 
 //可选参数{} []
-getStudent1(String id,[String name, int age, score]){
+getStudent1(String id, [String name, int age, score]) {
   return 'id = $id,name=$name,age=$age,score=$score';
 }
 
-getStudent2(String id,{String name,int age,score}){
+getStudent2(String id, {String name, int age, score}) {
   return 'id=$id,name=$name,age=$age,score=$score';
 }
 
 //可选参数默认值
-getStudent3(String id,{String name,int age,double score = 100.0}){
+getStudent3(String id, {String name, int age, double score = 100.0}) {
   return 'id=$id,name=$name,age=$age,score=$score';
 }

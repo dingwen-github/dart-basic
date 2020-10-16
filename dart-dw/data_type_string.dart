@@ -16,11 +16,11 @@
   9.split 以什么分隔，得到的是一个数组
  */
 
-void main(){
+void main() {
   String str1 = 'dart';
   String str2 = "dart";
   String str3 = '''dart dart ''';
-  String str4= '''dart
+  String str4 = '''dart
   
    dart ''';
 
@@ -61,10 +61,12 @@ void main(){
   print(str8.startsWith('t'));
   //是否以什么结束
   print(str8.endsWith('other'));
-  print(str8.substring(1,2));
+  print(str8.substring(1, 2));
   var list = str8.split(' ');
   print(list);
   print(str8.replaceAll('from', ''));
 
-
+  //字符序列是此对象表示的字符序列的后缀，则返回 true；否则返回 false
+  String str9 = '530000';
+  print(str9.endsWith('0000'));
 }

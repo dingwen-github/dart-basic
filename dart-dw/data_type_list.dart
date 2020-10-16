@@ -23,13 +23,13 @@ void main() {
   print(list1);
 
   //不可变list
-  var list2 = const [1,2,3];
+  var list2 = const [1, 2, 3];
 //  list2[0] = 20;
   print(list2);
 
-  var list3 = new  List();
+  var list3 = new List();
 
-  var list4 = ['hello','dart'];
+  var list4 = ['hello', 'dart'];
   print(list4.length);
   list4.add('value');
   list4.insert(0, 'java');
@@ -46,7 +46,7 @@ void main() {
 
   //在List中截取下标为（第一个参数）的值进行打印
   //两个参数的时候表示从List中截取下标从第一个参数到第二个参数之间的值进行打印（前包后不包）
-  print(list4.sublist(1,3));
+  print(list4.sublist(1, 3));
 
 
   //forEach参数是一个方法
