@@ -336,7 +336,7 @@ Dart语言基础，创建于20200726
   + 8.时间差 difference  print([difference.inDays, difference.inHours]);//d1与d2相差的天数与小时
   + 9.时间戳  print(now.millisecondsSinceEpoch);//单位毫秒，13位时间戳 print(now.microsecondsSinceEpoch);//单位微秒,16位时间戳
   + 10.padLeft(int width,String padding)：如果字符串长度小于width，在左边填充padding
-  
+  + 11.防止某一段代码重复执行
   
 > 异步编程
   + 1.在Dart中与Promise对应的是Future
