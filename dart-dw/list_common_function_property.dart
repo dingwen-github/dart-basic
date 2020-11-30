@@ -370,4 +370,15 @@ void main() {
   List<int> list23 = list21.sublist(1, 3); //从指定索引截取List  含头不含尾
   print(list22); //[5, 1, 2, 3]
   print(list23); //[5, 1]
+
+  /// 数组去重
+  List<int> repeat = [];
+  for(int i =0;i<10;i++){
+    repeat.add(i);
+    repeat.add(i);
+  }
+  print(repeat);
+  print('***********************************************');
+  List<int> noRepeat = repeat.toSet().toList();
+  print(noRepeat);
 }
