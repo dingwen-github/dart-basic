@@ -132,6 +132,7 @@ Dart语言基础，创建于20200726
 + 13.addEntries()合并两个map如果key有重复，被合并的map的value覆盖前者
 + 14.addAll()整体合并另一个map，泛型要一致
 + 15.removeWhere()根据条件批量删除
++ 16.putIfAbsent() 添加(key,返回value的方法)
 
 > `dynamic`
 > 动态数据类型

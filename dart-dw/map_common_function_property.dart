@@ -139,4 +139,8 @@ void main() {
   Map<Object, Object> map22 = map21.cast();
   map22["d"] = 33;
 //    print(map22);//{a: 1, b: 2, c: 3, d: 33}
+
+/// 添加
+  map22.putIfAbsent('d', ()=> '3');
+
 }
