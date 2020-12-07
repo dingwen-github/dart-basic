@@ -357,3 +357,17 @@ Dart语言基础，创建于20200726
   + 14.微任务队列：处理来自于Dart内部的任务，适合用来不会特别耗时或紧急的任务，微任务队列的处理优先级比事件队列的高，如果微任务处理比较耗时，会导致事件堆积，应用响应缓慢。
   + 15.你可以通过Future.microtask 来向isolate提交一个微任务
   + 16.多线程 在Dart中，你可以通过Isolate.spawn 来创建一个新的isolate
+  
+  
+  ### 六、正则表达式使用
+  ```dart
+/*
+* @Author DingWen
+* @Description 正则表达式使用
+* @Date 17:40 2020/12/7
+**/
+void main(){
+  RegExp exp = new RegExp(r"^[0-9]\d*$");
+  print(exp.hasMatch('12646546154165'));
+}
+```
